@@ -1,0 +1,17 @@
+spring.application.name=YourAppNameHere
+spring.ai.openai.api-key=your-openai-api-key
+spring.output.ansi.enabled=always
+spring.servlet.multipart.max-file-size=50MB
+spring.ai.openai.embedding.options.model=your-embedding-model
+
+spring.main.allow-bean-definition-overriding=true
+
+spring.sql.init.mode=always
+
+spring.das.host=your-redis-host
+spring.data.redis.port=your-redis-port
+spring.ai.vectorstore.redis.index-name=your-index-name
+spring.ai.vectorstore.redis.prefix=your-key-prefix
+
+# Example Docker command to start Redis Stack:
+# docker run -d --name redis-stack -p 6379:6379 redis/redis-stack:latest
