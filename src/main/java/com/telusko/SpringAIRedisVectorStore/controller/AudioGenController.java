@@ -2,9 +2,11 @@ package com.telusko.SpringAIRedisVectorStore.controller;
 
 import org.springframework.ai.audio.transcription.AudioTranscriptionPrompt;
 import org.springframework.ai.openai.OpenAiAudioSpeechModel;
+import org.springframework.ai.openai.OpenAiAudioSpeechOptions;
 import org.springframework.ai.openai.OpenAiAudioTranscriptionModel;
 import org.springframework.ai.openai.OpenAiAudioTranscriptionOptions;
 import org.springframework.ai.openai.api.OpenAiAudioApi;
+import org.springframework.ai.openai.audio.speech.SpeechPrompt;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,8 +39,15 @@ public class AudioGenController {
 
     @PostMapping("api/tts")
     public byte[] textToSpeech(@RequestParam String text) {
-        
-        return audioSpeechModel.call(text);
+
+        OpenAiAudioSpeechOptions options = OpenAiAudioSpeechOptions.builder()
+                .voice(OpenAiAudioApi.SpeechRequest.Voice.NOVA)
+                .speed(1f)
+                .build();
+
+        SpeechPrompt prompt = new SpeechPrompt(text, options);
+
+        return audioSpeechModel.call(prompt).getResult().getOutput();
     }
 
 }
