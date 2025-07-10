@@ -1,18 +1,20 @@
 ## 🔍 Spring AI Multitool
 
-This project demonstrates how to integrate Redis Vector Store with Spring AI
+This project showcases the integration of Redis Vector Store with Spring AI to build advanced AI-powered features.
 
-🧠 RAG (Retrieval-Augmented Generation) with Redis Vector Store & OpenAI
+Features include:
 
-🔎 Vector similarity search using OpenAI embeddings
+🧠 RAG (Retrieval-Augmented Generation) leveraging Redis Vector Store and OpenAI for enhanced contextual responses
 
-🖼️ Image generation from text prompts (via DALL·E)
+🔎 Vector similarity search using OpenAI embeddings for fast and relevant data retrieval
 
-📸 Image description from uploaded visuals (Vision model)
+🖼️ Text-to-image generation powered by DALL·E for creative visuals
 
-🎙️ Speech-to-Text audio transcription (Whisper)
+📸 AI-powered image description from uploaded images
 
-🗣️ Text-to-Speech voice synthesis
+🎙️ Speech-to-Text transcription using OpenAI’s audio recognition model
+
+🔈 Text-to-Speech conversion that returns audio output for seamless voice interaction
 
 ## Requirements
 
@@ -45,4 +47,4 @@ and OpenAI API key.
 | `POST` | `/api/stt`        | Speech to text transcription             | `file`: audio file (`.mp3`, `.wav`, etc.)     |
 | `GET`  | `/image/{query}`  | Generate an image from text prompt       | `query`: string                               |
 | `POST` | `/image/describe` | Get AI-generated description of an image | `query`: string, `file`: image file (`.jpeg`) |
-
+| `POST` | `/api/tts`        | Convert text to speech (returns audio)   | `text`: string                                |
