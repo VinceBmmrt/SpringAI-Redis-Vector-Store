@@ -44,7 +44,7 @@ and OpenAI API key.
 | `POST` | `/api/embedding`  | Get embedding vector for a given text    | `text`: string                                |
 | `POST` | `/api/similarity` | Semantic similarity between two texts    | `text1`, `text2`: string                      |
 | `POST` | `/api/recommend`  | Movie recommender by type, year, lang    | `type`, `year`, `lang`: string                |
-| `POST` | `/api/stt`        | Speech to text transcription             | `file`: audio file (`.mp3`, `.wav`, etc.)     |
 | `GET`  | `/image/{query}`  | Generate an image from text prompt       | `query`: string                               |
 | `POST` | `/image/describe` | Get AI-generated description of an image | `query`: string, `file`: image file (`.jpeg`) |
+| `POST` | `/api/stt`        | Speech to text transcription             | `file`: audio file (`.mp3`, `.wav`, etc.)     |
 | `POST` | `/api/tts`        | Convert text to speech (returns audio)   | `text`: string                                |
