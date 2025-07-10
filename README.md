@@ -1,4 +1,4 @@
-# SpringAI Redis Vector Store
+# SpringAI Redis Vector Store with RAG
 
 This project demonstrates how to integrate Redis Vector Store with Spring AI to enable vector similarity searches.
 
