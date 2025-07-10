@@ -19,6 +19,10 @@ Features include:
 📋 List extraction from LLM responses using Spring AI's ListOutputConverter for structured outputs (e.g., top movie
 lists)
 
+🗂️ Mapping LLM responses into Java objects
+Using Spring AI converters like BeanOutputConverter and ListOutputConverter to transform JSON or structured LLM
+responses into Java Beans or lists for easier processing.
+
 ## Requirements
 
 - Java 17 or higher
@@ -39,16 +43,17 @@ and OpenAI API key.
 
 ## 🚀 API Endpoints
 
-| Method | Endpoint          | Description                                         | Params                                        |
-|--------|-------------------|-----------------------------------------------------|-----------------------------------------------|
-| `GET`  | `/api/{message}`  | Simple chat completion                              | `message`: string                             |
-| `POST` | `/api/ask`        | RAG-based Q&A from Redis vector DB                  | `query`: string                               |
-| `POST` | `/api/product`    | Semantic product search                             | `text`: string                                |
-| `POST` | `/api/embedding`  | Get embedding vector for a given text               | `text`: string                                |
-| `POST` | `/api/similarity` | Semantic similarity between two texts               | `text1`, `text2`: string                      |
-| `POST` | `/api/recommend`  | Movie recommender by type, year, lang               | `type`, `year`, `lang`: string                |
-| `GET`  | `/image/{query}`  | Generate an image from text prompt                  | `query`: string                               |
-| `POST` | `/image/describe` | Get AI-generated description of an image            | `query`: string, `file`: image file (`.jpeg`) |
-| `POST` | `/api/stt`        | Speech to text transcription                        | `file`: audio file (`.mp3`, `.wav`, etc.)     |
-| `POST` | `/api/tts`        | Convert text to speech (returns audio)              | `text`: string                                |
-| `GET`  | `/movies`         | Get Array of top 5 movies using ListOutputConverter | `name`(actor): string                         |
+| Method | Endpoint          | Description                                                             | Params                                        |
+|--------|-------------------|-------------------------------------------------------------------------|-----------------------------------------------|
+| `GET`  | `/api/{message}`  | Simple chat completion                                                  | `message`: string                             |
+| `POST` | `/api/ask`        | RAG-based Q&A from Redis vector DB                                      | `query`: string                               |
+| `POST` | `/api/product`    | Semantic product search                                                 | `text`: string                                |
+| `POST` | `/api/embedding`  | Get embedding vector for a given text                                   | `text`: string                                |
+| `POST` | `/api/similarity` | Semantic similarity between two texts                                   | `text1`, `text2`: string                      |
+| `POST` | `/api/recommend`  | Movie recommender by type, year, lang                                   | `type`, `year`, `lang`: string                |
+| `GET`  | `/image/{query}`  | Generate an image from text prompt                                      | `query`: string                               |
+| `POST` | `/image/describe` | Get AI-generated description of an image                                | `query`: string, `file`: image file (`.jpeg`) |
+| `POST` | `/api/stt`        | Speech to text transcription                                            | `file`: audio file (`.mp3`, `.wav`, etc.)     |
+| `POST` | `/api/tts`        | Convert text to speech (returns audio)                                  | `text`: string                                |
+| `GET`  | `/movies`         | Get Array of top 5 movies using ListOutputConverter                     | `name`(actor): string                         |
+| `GET`  | `/movie`          | Get detailed movie data mapped to a Java Bean using BeanOutputConverter | `name`: string (actor or movie name)          |
